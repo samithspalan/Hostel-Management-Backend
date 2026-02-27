@@ -20,3 +20,7 @@ jobs:
 
       - name: Push Backend Image
         run: docker push samithspalan/deployment-backend:latest
+      - name: Debug Secrets
+  run: |
+    echo "Username: ${{ secrets.DOCKER_USERNAME }}"
+    echo "Password length: ${#${{ secrets.DOCKER_PASSWORD }}}"
